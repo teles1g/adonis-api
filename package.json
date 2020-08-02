@@ -12,7 +12,7 @@
     "adonisjs",
     "adonis-app"
   ],
-  "author": "",
+  "author": "Lucas Teles <dev.teles@outlook.com>",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
