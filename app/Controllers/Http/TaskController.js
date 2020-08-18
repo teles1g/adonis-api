@@ -1,6 +1,15 @@
 const Task = use('App/Models/Task')
 
 class TaskController {
+  async index ({ params }) {
+    const tasks = await Task.query()
+      .where('project_id', params.projects_id)
+      .with('user')
+      .fetch()
+
+    return tasks
+  }
+
   async store ({ params, request }) {
     const data = request.only([
       'user_id',
