@@ -29,6 +29,24 @@ class TaskController {
 
     return task
   }
+
+  async update ({ params, request }) {
+    const task = await Task.findOrFail(params.id)
+
+    const data = request.only([
+      'user_id',
+      'title',
+      'description',
+      'due_date',
+      'file_id'
+    ])
+
+    task.merge(data)
+
+    await task.save()
+
+    return task
+  }
 }
 
 module.exports = TaskController
