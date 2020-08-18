@@ -14,6 +14,12 @@ class TaskController {
 
     return task
   }
+
+  async show ({ params }) {
+    const task = await Task.findOrFail(params.id)
+
+    return task
+  }
 }
 
 module.exports = TaskController
