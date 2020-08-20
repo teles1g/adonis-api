@@ -1,7 +1,7 @@
 'use strict'
 
 const Env = use('Env')
-const Youch = use('youch')
+const Youch = require('youch')
 const BaseExceptionHandler = use('BaseExceptionHandler')
 
 /**
